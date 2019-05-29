@@ -1,5 +1,5 @@
 =========================
-mirror-requests changeLog
+mirequests changeLog
 =========================
 
 All notable changes to this project will be documented in this file.
@@ -30,5 +30,5 @@ Security
 --------
 
 
-.. _Unreleased: https://github.com/miurahr/qli-installer/compare/v0.0.1...HEAD
-.. _v0.0.1: https://github.com/miurahr/qli-installer/releases/tag/v0.0.1
+.. _Unreleased: https://github.com/miurahr/miresuests/compare/v0.0.1...HEAD
+.. _v0.0.1: https://github.com/miurahr/mirequests/releases/tag/v0.0.1
