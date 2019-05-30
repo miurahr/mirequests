@@ -4,9 +4,6 @@ import requests
 import xml.etree.ElementTree as ElementTree
 
 
-_default_blacklist = ['http://mirrors.tuna.tsinghua.edu.cn']
-
-
 class Metalink:
     '''Download .meta4 metalink version4 xml file and parse it.'''
 
@@ -32,7 +29,12 @@ class Metalink:
             if blacklist is not None:
                 for ind in range(len(self.mirrors)):
                     mirror = self.mirrors[str(ind + 1)]
-                    if mirror in blacklist:
+                    black = False
+                    for b in blacklist:
+                        if mirror.startswith(b):
+                            black = True
+                            continue
+                    if black:
                         continue
                     return mirror
             else:
@@ -47,7 +49,7 @@ class Metalink:
 
 def _in_blacklist(url, blacklist=None):
     if blacklist is None:
-        blacklist = _default_blacklist
+        return False
     for b in blacklist:
         if url.startswith(b):
             return True
@@ -66,7 +68,7 @@ def get(url, params=None, blacklist=None, **kwargs):
         # we will use another redirected location for that.
         newurl = r.headers['Location']
         if _in_blacklist(newurl, blacklist):
-            mml = mirrors.Metalink(url, blacklist=blacklist)
+            mml = Metalink(url, blacklist)
             newurl = mml.altlink()
         kwargs['allow_redirects'] = True
         r = requests.request('get', newurl, params=params, **kwargs)
