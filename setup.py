@@ -11,15 +11,15 @@ def readme():
         return readmef.read()
 
 
-setup(name='mirror_requests',
+setup(name='mirequests',
       version='0.0.1',
-      description='mirror_requests',
+      description='mirequests',
       url='http://github.com/miurahr/mirror_requests',
       license='LGPL-2.1',
       long_description=readme(),
       author='Hioshi Miura',
       author_email='miurahr@linux.com',
-      packages=['mirror_requests'],
+      packages=['mirequests'],
       install_requires=['requests', 'six'],
       extras_require={
         'dev': [

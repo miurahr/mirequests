@@ -13,7 +13,7 @@ Resources
 - Status: alpha
 - Activity: high
 
-.. _`Tracker`: https://github.com/miurahr/mirror_requests/issues
+.. _`Tracker`: https://github.com/miurahr/mirequests/issues
 
 Bug triage
 ==========

@@ -24,5 +24,5 @@ deploy:
     skip_cleanup: true
     skip_existing: true
     on:
-      repo: miurahr/mirror_requests
+      repo: miurahr/mirequests
       tags: true
